@@ -1,0 +1,66 @@
+.title{
+    font: 800 24px / 1 Inter;
+    color: var(--main-black, black);
+}
+.line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+font: 400 16px / 1.5 Inter;
+color: var(--main-black, black);
+}
+.image{
+    background-color: transparent;
+    background-image: url("@images/not-found.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+@media screen and (min-width: 1440px){
+
+        .title{
+            font-size: 32px;
+        }
+      .text{
+        font-size: 18px;
+      }
+        .image{
+            width: 400px;
+            height: 400px;
+        }
+
+}
+@media screen and (max-width: 1440px){
+
+        .title{
+            font-size: 28px;
+        }
+        .text{
+            font-size: 16px;
+        }
+        .image{
+            width: 300px;
+            height: 300px;
+        }
+
+}
+@media screen and (max-width: 768px){
+
+        .line{
+            flex-direction: column;
+        }
+        .title{
+            font-size: 24px;
+        }
+        .text{
+            font-size: 14px;
+        }
+        .image{
+            width: 200px;
+            height: 200px;
+        }
+}

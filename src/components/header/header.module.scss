@@ -1,0 +1,109 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        background-color: var(--main-white, white);
+    }
+    .searchBox{
+       flex-grow: 2;
+        align-self: stretch;
+    }
+}
+
+.searchForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    flex-grow: 2;
+    border-radius: 20px;
+    .searchInput{
+        border: none;
+        flex-grow: 2;
+        color: var(--input-text-color, rgba(172, 169, 167, 1));
+        font-family: Inter, sans-serif;
+        font-weight: 400;
+
+        border-radius: 20px 0 0 20px;
+        background-color: var(--white, white);
+    }
+    .searchInput::placeholder{
+        color: var(--input-text-color, rgba(172, 169, 167, 1));
+    }
+    .searchInput:focus{
+        outline: var(--input-text-color, rgba(172, 169, 167, 1));
+    }
+    .searchButton{
+        align-self: stretch;
+
+    }
+}
+@media screen and (min-width: 1440px){
+    .header{
+        width: calc(1440px - 60px);
+        margin: 0 auto;
+
+        padding: 30px 30px 0 30px;
+        gap: 30px;
+        .section{
+            padding: 20px 30px;
+            gap: 30px;
+        }
+    }
+    .searchForm{
+        .searchInput{
+            padding: 15px 20px;
+            font-size: 16px;
+        }
+
+    }
+
+}
+@media screen and (max-width: 1440px){
+    .header{
+        padding: 25px 25px 0;
+        gap: 25px;
+        .section{
+            padding: 20px 25px;
+            gap: 25px;
+        }
+    }
+    .searchForm{
+        .searchInput{
+            padding: 15px 20px;
+        }
+
+    }
+
+}
+@media screen and (max-width: 900px){
+    .ikGroup.section{
+            display: none;
+        }
+}
+
+@media screen and (max-width: 768px){
+    .header{
+        padding: 10px 10px 0 10px;
+        gap: 10px;
+        .section{
+            padding: 15px 10px;
+            gap: 10px;
+        }
+
+    }
+}
+@media screen and (max-width: 425px){
+    .header{
+
+        .searchForm{
+            display: none;
+        }
+    }
+}
+

@@ -1,0 +1,25 @@
+@import "@styles/variables.scss";
+.layout{
+    background-color: var(--bg-color, rgb(55 67 117 / 100%));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+@media screen and (min-width: 1440px){
+    .layout{
+
+        gap: 50px;
+    }
+}
+@media screen and (min-width: 768px){
+    .layout{
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 768px){
+    .layout{
+        gap: 20px;
+    }
+}

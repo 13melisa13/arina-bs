@@ -1,0 +1,40 @@
+### react template
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+dist
+build
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+### StorybookJs template
+# gitignore template for the Storybook, UI guide for front apps
+# website: https://storybook.js.org/
+
+storybook-static/
+
+/dist/main.js
+/dist/main.js.LICENSE.txt
+/.idea/.gitignore
+
+*storybook.log
+/.idea/BS.iml
+/.idea/vcs.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/modules.xml
+/.idea/jsLinters/eslint.xml
+/mak_main.png
+
+/mak_product.png
+
+/mak_reg_login.png
+
+/mak_serv.png
