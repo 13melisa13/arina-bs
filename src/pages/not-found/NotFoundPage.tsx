@@ -3,14 +3,14 @@ import {UIButton} from "../../components/button/UIButton";
 import styles from './notfoundpage.module.scss';
 export default function NotFoundPage() {
     return (
-        <main className={styles.main}>
-            <h1 className={styles.title}>404</h1>
-            <div className={styles.line} >
-                <p className={styles.text}>Страница не найдена. </p>
-            <UIButton to={'/'} children='Вернуться на главную' backgroundColor={'transparent'} color={'dark-pink'}/>
-        </div>
-            <div className={styles.image} />
-
-        </main>
-    )
+        <>
+                <h1 className={styles.title}>404</h1>
+                <div className={styles.line}>
+                    <p className={styles.text}>Страница не найдена. </p>
+                    <UIButton to={'/'} children='Вернуться на главную' backgroundColor={'transparent'}
+                              color={'dark-pink'}/>
+                </div>
+                <div className={styles.image}/>
+            </>
+        )
 }

@@ -87,6 +87,9 @@ module.exports = {
 	},
 
 	plugins: [
+		new webpack.DefinePlugin({
+      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL || ''),
+    }),
 		new HTMLWebpackPlugins({
 			template: path.resolve(__dirname, '..', './public/index.html'),
 		}),

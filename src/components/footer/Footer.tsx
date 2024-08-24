@@ -7,10 +7,13 @@ export default function Footer() {
 		<footer className={styles.footer}>
 			<nav className={styles.nav}>
 				<UIButton to={'/'} children='О нас'
+						  textAlign={'left'}
                     backgroundColor={'transparent'}/>
                 <UIButton to={'/'} children='Пользовательское соглашение'
+						  textAlign={'left'}
                     backgroundColor={'transparent'}/>
                 <UIButton to={'/'} children='Политика конфиденциальности'
+						  textAlign={'left'}
                     backgroundColor={'transparent'}/>
 			</nav>
 			<p className={clsx(styles.copy)}>&copy; 2024 Business-S4k@</p>

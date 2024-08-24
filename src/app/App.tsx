@@ -3,14 +3,13 @@ import { createBrowserRouter } from 'react-router-dom'
 import Layout from '../components/layout/Layout'
 import IndexPage from '../pages/index/IndexPage'
 import NotFoundPage from "../pages/not-found/NotFoundPage";
+import Map from "../components/map/Map";
 
 export const router = createBrowserRouter([
 	{
 		index: true,
 		element: (
-			<Layout>
-				<IndexPage />
-			</Layout>
+			<Layout main={<IndexPage />} asideRight={<Map />} />
 		),
 	},
 	{
@@ -24,9 +23,7 @@ export const router = createBrowserRouter([
 	{
 		path: '*',
 		element:
-			<Layout>
-				<NotFoundPage />
-			</Layout>,
+			<Layout main={<NotFoundPage />} />
 	}
 
 ])

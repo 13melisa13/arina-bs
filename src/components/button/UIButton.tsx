@@ -19,8 +19,9 @@ type UIButtonProps = {
 	paddingAside?: number
 	img?: string
 	borderRadius?: number
-	imgAfter?: string
+	imgBefore?: string
 	className?: string
+	textAlign?: string
 }
 
 export const UIButton = ({
@@ -39,7 +40,9 @@ export const UIButton = ({
 	img = '',
 	borderRadius = 10,
 	title = '',
-	className = ''
+	className = '',
+	textAlign = 'center',
+	imgBefore = ''
 }: UIButtonProps) => {
 	className = clsx(
 		styles.button,
@@ -53,8 +56,11 @@ export const UIButton = ({
 		styles[`padding-top-${paddingTop}`],
 		styles[`padding-aside-${paddingAside}`],
 		 img!=='' && styles[`img`],
+		imgBefore!=='' && styles[`img-before-${imgBefore}`],
+		imgBefore!=='' && styles[`img-before`],
 		img!=='' && styles[`img-${img}`],
-		styles[`border-radius-${borderRadius}`]
+		styles[`border-radius-${borderRadius}`],
+			styles[`text-align-${textAlign}`]
 	);
 	title = title || (children || '').toString()
 	return to ? (
@@ -74,6 +80,7 @@ export const UIButton = ({
 			className={className}
 			disabled={disabled}
 			title={title}
+
 		>
 			{children}
 		</button>

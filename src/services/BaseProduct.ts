@@ -1,27 +1,27 @@
 class BaseProduct {
 	private name: string = 'baseProduct'
 	private readonly id: number = 0
-	private description: string = ''
+	//private description: string = ''
 	private price: number = 0
-	private discount: number | null = null
-	private img: string = ''
-	private categoryId: number | null = null
+	// private discount: number | null = null
+	private img: string | null = null
+	// private categoryId: number | null = null
 
 	constructor(
 		name: string,
 		id: number,
-		description: string,
+		// description: string,
 		price: number,
-		discount: number | null = null,
-		img: string = '',
-		categoryId: number | null = null
+		// discount?: number | null | undefined,
+		img: string | null,
+		// categoryId: number | null = null
 	) {
 		this.name = name
 		this.id = id
-		this.description = description
+		// this.description = description
 		this.price = price
-		this.discount = discount
-		this.categoryId = categoryId
+		// this.discount = discount
+		// this.categoryId = categoryId
 		this.img = img
 	}
 	getName(): string {
@@ -39,30 +39,33 @@ class BaseProduct {
 	getId(): number {
 		return this.id
 	}
-	getDescription(): string {
-		return this.description
-	}
-	setDescription(description: string) {
-		this.description = description
-	}
-	getDiscount(): number | null {
-		return this.discount
-	}
-	setDiscount(discount: number) {
-		this.discount = discount
-	}
-	getImg(): string {
+	// getDescription(): string {
+	// 	return this.description
+	// }
+	// setDescription(description: string) {
+	// 	this.description = description
+	// }
+	// getDiscount(): number | null {
+	// 	return this.discount
+	// }
+	// setDiscount(discount: number) {
+	// 	this.discount = discount
+	// }
+	getImg(): string | null {
+		if (!this.img) {
+			return null
+		}
 		return this.img
 	}
-	setImg(img: string) {
+	setImg(img: string | null) {
 		this.img = img
 	}
-	getCategoryId(): number | null {
-		return this.categoryId
-	}
-	setCategoryId(categoryId: number) {
-		this.categoryId = categoryId
-	}
+	// getCategoryId(): number | null {
+	// 	return this.categoryId
+	// }
+	// setCategoryId(categoryId: number) {
+	// 	this.categoryId = categoryId
+	// }
 	toString(): string {
 		return `${this.name} - ${this.price}`
 	}
