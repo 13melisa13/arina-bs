@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import {UIButton} from "../button/UIButton";
 import clsx from "clsx";
 import Modal from "../modal/Modal";
-import LoginForm from "../../pages/login-form/LoginForm";
+import LoginPage from "../../pages/login-form/LoginPage";
 import {useLocation} from "react-router-dom";
 
 export default function Header() {
@@ -12,7 +12,6 @@ export default function Header() {
 		e.preventDefault()
 	}
 	const location = useLocation();
-
 
 	return (
 		<header className={styles.header}>
@@ -50,7 +49,7 @@ export default function Header() {
 					color='main-black'
 					paddingAside={30}
 					paddingTop={20}
-					state={{ backgroundLocation: location }}
+					state={{ from: location }}
 				/>
 				<UIButton
 					children=''
@@ -60,7 +59,7 @@ export default function Header() {
 					paddingAside={20}
 					paddingTop={20}
 					img='cart'
-					state={{ backgroundLocation: location }}
+					state={{ from: location }}
 				/>
 				<UIButton
 					to='/login'
@@ -69,7 +68,7 @@ export default function Header() {
 					backgroundColor='dark-pink'
 					paddingAside={30}
 					paddingTop={20}
-					state={{ backgroundLocation: location }}
+					state={{ from: location }}
 
 				/>
 

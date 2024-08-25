@@ -1,32 +1,17 @@
-import React from 'react'
-import {createBrowserRouter, useMatch} from 'react-router-dom'
-import Layout from '../components/layout/Layout'
-import IndexPage from '../pages/index/IndexPage'
-import NotFoundPage from "../pages/not-found/NotFoundPage";
-import Map from "../components/map/Map";
-import Modal from "../components/modal/Modal";
-import LoginForm from "../pages/login-form/LoginForm";
+import React, { useState } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from '../services/store';
+import { router } from '../router';
+import Modal from '../components/modal/Modal';
 
-export const router = createBrowserRouter([
-	{
-		index: true,
-		element: (
-			<Layout main={<IndexPage />} asideRight={<Map />} />
-		),
-	},
-	{
-		path: '/login',
-		element: <Modal children={<LoginForm />} onClick={() => {}}/>,
+function App() {
 
-	},
-	{
-		path: '/register',
-		element: <div>Register</div>,
-	},
-	{
-		path: '*',
-		element:
-			<Layout main={<NotFoundPage />} />
-	}
+    return (
+        <Provider store={store}>
+            <RouterProvider router={router} />
 
-])
+        </Provider>
+    );
+}
+export default App;

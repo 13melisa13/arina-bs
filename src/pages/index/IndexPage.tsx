@@ -7,6 +7,7 @@ import adverts from "../../data/adverts";
 import products from "../../data/products";
 import Service from "../../components/cards/service/Service";
 import services from "../../data/services";
+import {Outlet} from "react-router-dom";
 
 
 
@@ -54,6 +55,7 @@ export default function IndexPage() {
 					/>
 				))}
 			</Section>
+			<Outlet />
 		</>
 	)
 }

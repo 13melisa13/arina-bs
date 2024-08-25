@@ -4,11 +4,11 @@ import React from "react";
 
 type ModalProps = {
     children: React.ReactNode;
-    onClick: () => void;
+    onClose: () => void;
 }
-export default function Modal({ children, onClick }: ModalProps) {
+export default function Modal({ children, onClose }: ModalProps) {
     return createPortal(
-        <dialog className={styles.modal} onClick={onClick}>
+        <dialog className={styles.modal} onClose={onClose}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
                 {children}
             </div>

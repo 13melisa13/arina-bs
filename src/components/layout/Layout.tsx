@@ -3,19 +3,21 @@ import React from 'react'
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import ContentContainer from "../content-container/ContentContainer";
+import {Outlet} from "react-router-dom";
 
 type LayoutProps = {
-	main: React.ReactNode,
-	asideLeft?: React.ReactNode | null,
-	asideRight?: React.ReactNode | null
+	header?: React.ReactNode,
+	footer?: React.ReactNode,
+	main?: React.ReactNode,
+
 }
 
-function Layout({main, asideLeft, asideRight}: LayoutProps) {
+function Layout({main,  header, footer}: LayoutProps) {
 	return (
 		<div className={styles.layout}>
-			<Header />
-			<ContentContainer main={main} asideLeft={asideLeft} asideRight={asideRight} />
-			<Footer />
+			{header || <Header />}
+			{ main || <Outlet />}
+			{footer || <Footer />}
 		</div>
 	)
 }
