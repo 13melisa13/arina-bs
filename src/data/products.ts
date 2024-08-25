@@ -1,8 +1,8 @@
-const productImageUrl = 'https://via.placeholder.com/150';
+const productImageUrl = process.env.PUBLIC_URL + '/images/product.png';
 const products = [
 	{
 		id: 1,
-		name: 'Товар 1',
+		name: 'Продукт высокого качества 1',
 		price: 100,
 		imageUrl: productImageUrl,
 	},
@@ -36,29 +36,6 @@ const products = [
 		price: 600,
 		imageUrl: productImageUrl,
 	},
-	{
-		id: 7,
-		name: 'Товар 7',
-		price: 700,
-		imageUrl: productImageUrl,
-	},
-	{
-		id: 8,
-		name: 'Товар 8',
-		price: 800,
-		imageUrl: productImageUrl,
-	},
-	{
-		id: 9,
-		name: 'Товар 9',
-		price: 900,
-		imageUrl: productImageUrl,
-	},
-	{
-		id: 10,
-		name: 'Товар 10',
-		price: 1000,
-		imageUrl: productImageUrl,
-	},
+
 ];
 export default products

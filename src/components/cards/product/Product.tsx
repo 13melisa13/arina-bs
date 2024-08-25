@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import styles from "./product.module.scss";
 import {UIButton} from "../../button/UIButton";
 import {useDispatch} from "react-redux";
+import img from "@images/product.png"
 import {addProduct, decrementProduct, incrementProduct, Product as ProductType, removeProduct} from "../../../services/productSlice";
 type ProductProps = {
     title: string
@@ -25,46 +26,52 @@ export default function Product({...cardProps}: ProductProps) {
         color: 'dark-pink',
         backgroundColor: 'white',
         to: !cardProps.isAuth ? '/login' : undefined,
-        paddingTop: 5,
-        paddingAside: 5,
+        paddingTop: 10,
+        paddingAside: 10,
+        className: styles.button
     }
     return <div
         className={styles.card}>
         <Link to={`/products/${id}`} className={styles.link}>
-            <img src={imageUrl || defaultImageUrl} alt={title} className={styles.background}/>
+
+            <img src={img || defaultImageUrl}
+                 onError={(e) => {
+                     e.currentTarget.src = defaultImageUrl
+                 }}
+                 alt={title} className={styles.background}/>
         </Link>
-        <h3 className={styles.title}>{title}</h3>
+
         <p className={styles.price}>{price}руб.</p>
+        <h3 className={styles.title}>{title}</h3>
+        {!count || count === 0 ?
+            <div className={styles.manage}>
+                <UIButton children={'В корзину'}
+                          {...buttonProps}
+                          onClick={() =>
+                              dispatch(addProduct(new ProductType(title, id, price, imageUrl)))}
+                          imgBefore={'heart'}
 
-            {!count || count === 0 ?
-                <div className={styles.manage}>
-                    <UIButton children={'В корзину'}
-                              {...buttonProps}
-                              onClick={() =>
-                        dispatch(addProduct(new ProductType(title, id, price, imageUrl)))}
-                              imgBefore={'heart'}
-
-                    />
-                </div>
-                    : <div className={styles.manage}>
+                />
+            </div>
+            : <div className={styles.manage}>
                 <UIButton children={'+'}
 
-                            {...buttonProps}
-                              onClick={() =>
-                        dispatch(incrementProduct(id))
+                          {...buttonProps}
+                          onClick={() =>
+                              dispatch(incrementProduct(id))
 
-                        }
+                          }
 
-                        />
-                        <span>{count}</span>
-                        <UIButton children={'-'}
-                            {...buttonProps}
+                />
+                <span >{count}</span>
+                <UIButton children={'-'}
+                          {...buttonProps}
 
-                              onClick={() => dispatch(decrementProduct(id))}
-                        />
+                          onClick={() => dispatch(decrementProduct(id))}
+                />
 
-                    </div>}
+            </div>}
 
 
-                </div>
-                }
+    </div>
+}

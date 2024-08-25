@@ -1,27 +1,31 @@
 import styles from './header.module.scss'
-import { NavLink } from 'react-router-dom'
 import Logo from "../logo/Logo";
-import React from "react";
+import React, {useState} from "react";
 import {UIButton} from "../button/UIButton";
 import clsx from "clsx";
+import Modal from "../modal/Modal";
+import LoginForm from "../../pages/login-form/LoginForm";
+import {useLocation} from "react-router-dom";
 
 export default function Header() {
 	const handleSearch = (e: React.FormEvent) => {
 		e.preventDefault()
 	}
+	const location = useLocation();
+
 
 	return (
 		<header className={styles.header}>
 			<div
 				className={
-				clsx(
-					styles.searchBox,
-					styles.section
-				)
-			}>
-				<Logo />
+					clsx(
+						styles.searchBox,
+						styles.section
+					)
+				}>
+				<Logo/>
 				<form className={styles.searchForm} onSubmit={handleSearch}>
-					<input type='text' placeholder='Search' className={styles.searchInput} />
+					<input type='text' placeholder='Search' className={styles.searchInput}/>
 					<UIButton
 						type='submit'
 						className={styles.searchButton}
@@ -34,10 +38,10 @@ export default function Header() {
 			</div>
 			<div
 				className={
-				clsx(
-					styles.section,
-					styles.ikGroup
-				)
+					clsx(
+						styles.section,
+						styles.ikGroup
+					)
 				}>
 				<UIButton
 					to='/login'
@@ -46,7 +50,7 @@ export default function Header() {
 					color='main-black'
 					paddingAside={30}
 					paddingTop={20}
-
+					state={{ backgroundLocation: location }}
 				/>
 				<UIButton
 					children=''
@@ -56,6 +60,7 @@ export default function Header() {
 					paddingAside={20}
 					paddingTop={20}
 					img='cart'
+					state={{ backgroundLocation: location }}
 				/>
 				<UIButton
 					to='/login'
@@ -64,9 +69,16 @@ export default function Header() {
 					backgroundColor='dark-pink'
 					paddingAside={30}
 					paddingTop={20}
+					state={{ backgroundLocation: location }}
 
 				/>
+
 			</div>
+
+
+
+
+
 		</header>
 	)
 }

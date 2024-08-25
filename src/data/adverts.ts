@@ -3,10 +3,10 @@ type advertProps = {
 	id: number,
 	imageUrl: string | null
 }
-const advertImageUrl = process.env.PUBLIC_URL + '/images/advert.jpg';
+const advertImageUrl = process.env.PUBLIC_URL + '/images/advert.png';
 const adverts: advertProps[] = [
 	{
-		title: 'Реклама 1',
+		title: 'Лучший ложки на районе',
 		id: 1,
 		imageUrl: advertImageUrl
 	},

@@ -1,8 +1,8 @@
-const serviceImageUrl = process.env.PUBLIC_URL + '/images/service.jpg';
+const serviceImageUrl = process.env.PUBLIC_URL + '/images/service.png';
 const services = [
 	{
-		title: 'Услуга 1',
-		busynessName: 'Busyness 1',
+		title: 'Помыть тарелку',
+		busynessName: 'Бизнес тарелка',
 		price: 1000,
 		id:1,
 		imageUrl: serviceImageUrl

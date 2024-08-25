@@ -22,7 +22,9 @@ export default function Section({title, children, tagTitle="h2", afterTitle="", 
 
             >{afterTitle}</span>}
             <div className={styles.content}>
-                {children}
+
+                    {children}
+
             </div>
             {moreLink && <UIButton className={styles.moreLink}
                                    to={moreLink} children={'все >'}

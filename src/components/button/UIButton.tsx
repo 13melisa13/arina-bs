@@ -21,7 +21,8 @@ type UIButtonProps = {
 	borderRadius?: number
 	imgBefore?: string
 	className?: string
-	textAlign?: string
+	textAlign?: string,
+	state?: any
 }
 
 export const UIButton = ({
@@ -42,7 +43,8 @@ export const UIButton = ({
 	title = '',
 	className = '',
 	textAlign = 'center',
-	imgBefore = ''
+	imgBefore = '',
+	state
 }: UIButtonProps) => {
 	className = clsx(
 		styles.button,
@@ -69,6 +71,8 @@ export const UIButton = ({
 			className={className}
 			title={title}
 			aria-label={title}
+			onClick={onClick}
+			state={state}
 		>
 			{children}
 		</NavLink>
