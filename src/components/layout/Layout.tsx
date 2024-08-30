@@ -8,17 +8,21 @@ import {Outlet} from "react-router-dom";
 type LayoutProps = {
 	header?: React.ReactNode,
 	footer?: React.ReactNode,
-	main?: React.ReactNode,
-
+	children?: React.ReactNode
 }
 
-function Layout({main,  header, footer}: LayoutProps) {
+function Layout({ children, header, footer}: LayoutProps) {
 	return (
+		<>
 		<div className={styles.layout}>
 			{header || <Header />}
-			{ main || <Outlet />}
+			<Outlet />
+			{children}
+			{/*{ main || <Outlet />}*/}
 			{footer || <Footer />}
 		</div>
+
+		</>
 	)
 }
 export default Layout

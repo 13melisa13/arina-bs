@@ -5,8 +5,8 @@ import IndexPage from './pages/index/IndexPage'
 import NotFoundPage from "./pages/not-found/NotFoundPage";
 import Map from "./components/map/Map";
 import Modal from "./components/modal/Modal";
-import LoginPage from "./pages/login-form/LoginPage";
 import ContentContainer from "./components/content-container/ContentContainer";
+import LoginForm from "./pages/login-form/LoginForm";
 
 export const router =  createBrowserRouter([
     {
@@ -16,10 +16,11 @@ export const router =  createBrowserRouter([
                 {
                     path: '/',
                     element: <ContentContainer main={<IndexPage />} asideRight={<Map />} />,
+
                     children: [
                         {
-                            path: 'login',
-                            element: <LoginPage />
+                            path: '/login',
+                            element: <Modal><LoginForm /></Modal>,
                         },
                     ]
                 },

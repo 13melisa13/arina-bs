@@ -1,10 +1,8 @@
 import styles from './header.module.scss'
 import Logo from "../logo/Logo";
-import React, {useState} from "react";
+import React from "react";
 import {UIButton} from "../button/UIButton";
 import clsx from "clsx";
-import Modal from "../modal/Modal";
-import LoginPage from "../../pages/login-form/LoginPage";
 import {useLocation} from "react-router-dom";
 
 export default function Header() {
