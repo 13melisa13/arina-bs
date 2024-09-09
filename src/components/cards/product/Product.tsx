@@ -22,9 +22,9 @@ export default function Product({...cardProps}: ProductProps) {
     if (!title || !id ) return null
     cardProps.isAuth = true;
     const buttonProps = {
-        borderColor: 'dark-pink',
-        color: 'dark-pink',
-        backgroundColor: 'white',
+        borderColor: "dark-pink" as const,
+        color: "dark-pink" as const,
+        backgroundColor: "white" as const,
         to: !cardProps.isAuth ? '/login' : undefined,
         paddingTop: 10,
         paddingAside: 10,
@@ -42,7 +42,7 @@ export default function Product({...cardProps}: ProductProps) {
         </Link>
 
         <p className={styles.price}>{price}руб.</p>
-        <h3 className={styles.title}>{title}</h3>
+        <h3 className={styles.title}>{title.slice(0,20)}{title.length > 20 && '...'}</h3>
         {!count || count === 0 ?
             <div className={styles.manage}>
                 <UIButton children={'В корзину'}
@@ -63,7 +63,9 @@ export default function Product({...cardProps}: ProductProps) {
                           }
 
                 />
-                <span >{count}</span>
+                <span
+                    className={styles.count}
+                >{count}</span>
                 <UIButton children={'-'}
                           {...buttonProps}
 

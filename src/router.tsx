@@ -7,6 +7,7 @@ import Map from "./components/map/Map";
 import Modal from "./components/modal/Modal";
 import ContentContainer from "./components/content-container/ContentContainer";
 import LoginForm from "./pages/login-form/LoginForm";
+import RegisterForm from "./pages/register-form/RegisterForm";
 
 export const router =  createBrowserRouter([
     {
@@ -22,6 +23,10 @@ export const router =  createBrowserRouter([
                             path: '/login',
                             element: <Modal><LoginForm /></Modal>,
                         },
+                        {
+                            path: '/register',
+                            element: <Modal><RegisterForm /></Modal>,
+                        }
                     ]
                 },
 

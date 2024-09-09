@@ -10,18 +10,18 @@ type UIButtonProps = {
 	type?: 'submit' | 'reset'
 	disabled?: boolean
 	to?: string | null
-	backgroundColor?: string
-	color?: string
+	backgroundColor?: 'transparent' | 'soft-pink' | 'dark-pink' | 'white' | 'main-white'
+	color?: 'white' | 'main-black' | 'dark-pink' | 'main-white'
 	backgroundHoverColor?: string
 	colorHover?: string
-	borderColor?: string
+	borderColor?: 'none' | 'dark-pink'
 	paddingTop?: number
 	paddingAside?: number
 	img?: string
-	borderRadius?: number
+	borderRadius?: 0 | 10 | 15
 	imgBefore?: string
 	className?: string
-	textAlign?: string,
+	textAlign?: 'center' | 'left' | 'right'
 	state?: any
 }
 

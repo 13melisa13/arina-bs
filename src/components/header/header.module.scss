@@ -2,14 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    line-height: 1;
     .section{
         display: flex;
         justify-content: space-between;
         align-items: center;
         border-radius: 20px;
         background-color: var(--main-white, white);
+        line-height: 1;
+
     }
     .searchBox{
+        line-height: 1;
+
        flex-grow: 2;
         align-self: stretch;
     }

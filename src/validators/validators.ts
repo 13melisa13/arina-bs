@@ -15,6 +15,18 @@ const formValidators = {
     password: {
         validator: (value: string) => PWD_REGEX.test(value),
         message: "Укажите пароль посложнее.",
-    }
+    },
+    firstName: {
+        validator: (value: string) => value.length > 0,
+        message: "Укажите имя.",
+    },
+    lastName: {
+        validator: (value: string) => value.length > 0,
+        message: "Укажите фамилию.",
+    },
+    password2: {
+        validator: (value: string) => PWD_REGEX.test(value),
+        message: "Укажите пароль посложнее.",
+    },
 };
 export default formValidators;

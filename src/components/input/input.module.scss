@@ -1,0 +1,40 @@
+.inputBox{
+  display: flex;
+
+  flex-direction: column;
+  padding: 0 20px;
+
+  .label{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    align-self: flex-start;
+  }
+  .input{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    padding: 10px;
+    border: none;
+    color: var(--input-text-color);
+    border-radius: 5px;
+
+  }
+  .input:focus{
+    outline: none;
+    border: 2px solid var(--input-text-color);
+  }
+  .errorInput, {
+    border: 2px solid var(--red);
+  }
+    .successInput{
+        border: 2px solid var(--green);
+    }
+    .error{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        color: var(--red);
+        align-self: flex-start;
+    }
+
+
+
+}

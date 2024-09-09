@@ -1,5 +1,6 @@
 import {ForwardedRef, InputHTMLAttributes} from "react";
 import styles from "./input.module.scss";
+import clsx from "clsx";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     inputRef?: ForwardedRef<HTMLInputElement>,
@@ -17,12 +18,20 @@ export const Input = (
     }: InputProps
 ) => {
     return (
-        <label className={styles.label}>
+        <label className={styles.inputBox}>
+            <span className={styles.label}>
+                {props.placeholder}
+            </span>
             <input
-                            className={className}
+                autoCapitalize={"off"}
+                autoComplete={"off"}
+                className={clsx(styles.input, className, error && styles.errorInput,
+                    !error && value && styles.successInput
+                )}
                             ref={inputRef}
                             {...props}
                             value={value}
+
             />
             <span className={styles.error}>
                 {error || ""}

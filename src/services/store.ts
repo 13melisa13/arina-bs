@@ -7,10 +7,12 @@ import {
     useSelector as selectorHook
 } from 'react-redux';
 import type { TypedUseSelectorHook } from 'react-redux'
+import {registerReducer} from "./registerSlice";
 
 export const store = configureStore({
 	reducer: {
 		auth: authReducer,
+		register: registerReducer,
 		productCart: productReducer,
 		// serviceCart: productReducer,
 	},

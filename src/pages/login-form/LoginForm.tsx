@@ -7,6 +7,7 @@ import {login} from "../../services/authAction";
 import formValidators from "../../validators/validators";
 import {Input} from "../../components/input/Input";
 import Form from "../../components/form/Form";
+import {UIButton} from "../../components/button/UIButton";
 
 export default function LoginForm() {
     const inputRef = useRef<HTMLInputElement | null>(null);
@@ -34,7 +35,18 @@ export default function LoginForm() {
     }
 
     return (
-        <Form handleSubmit={handleSubmit} name={"Вход"} isSending={isSending} sendingError={sendingError} isValid={isValid}>
+        <Form handleSubmit={handleSubmit}
+              name={"Вход"}
+               sendingError={sendingError}
+                text={
+            <>Ещё не зарегистрированы? <UIButton to='/register'
+                backgroundColor={'transparent'}
+                color={'dark-pink'}
+                paddingAside={0}
+                                                 paddingTop={0}
+            >Регистрация</UIButton></>
+                }
+        >
             <Input
                 inputRef={inputRef}
                 type='email'
@@ -57,6 +69,13 @@ export default function LoginForm() {
                 onChange={handleChange}
                 aria-invalid={!!errors?.password}
             />
+            <UIButton
+                
+                backgroundColor={'dark-pink'}
+                type='submit'
+                disabled={!isValid || isSending}
+            > {isSending ? "Отправка..." : "Войти"}
+            </UIButton>
 
         </Form>
     );

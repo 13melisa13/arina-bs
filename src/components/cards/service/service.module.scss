@@ -1,6 +1,6 @@
 .card{
     display: flex;
-  position: relative;
+    position: relative;
     justify-content: start;
     align-items: center;
     background-color: #fff;
@@ -16,8 +16,8 @@
         flex-direction: column;
         align-self: stretch;
         justify-content: space-between;
-      justify-self: stretch;
-      flex-grow: 2;
+        justify-self: stretch;
+        flex-grow: 2;
 
     }
   .title{
@@ -35,13 +35,13 @@
   }
 
 }
-@media screen and (min-height: 1440px){
+@media screen and (min-width: 1440px){
     .card {
         height: 200px;
-        width: 650px;
+        width: 700px;
         .background{
             height: 200px;
-            width: calc(650px /5 *2);
+            width: calc(700px /5 *2);
         }
       .text{
         gap: 10px;
@@ -49,7 +49,7 @@
       }
     }
     .title{
-        font: 600 24px/ 1 'Inter', sans-serif;
+        font: 600 20px/ 1 'Inter', sans-serif;
     }
   .busynessName{
     font: 400 20px/ 1 'Inter', sans-serif;
@@ -63,13 +63,13 @@
     margin-right: 10px;
   }
 }
-@media screen and (max-height: 1440px){
+@media screen and (max-width: 1440px){
      .card {
         height: 150px;
-        width: 750px;
+        width: 600px;
         .background{
             height: 150px;
-            width: calc(750px /5 *2);
+            width: calc(600px /5 *2);
         }
        .text{
         gap: 10px;
@@ -91,13 +91,13 @@
         margin-right: 10px;
     }
 }
-@media screen and (max-height: 768px){
+@media screen and (max-width: 768px){
      .card {
         height: 100px;
-        width: 500px;
+        width: 450px;
         .background{
             height: 100px;
-            width: calc(500px /5 *2);
+            width: calc(450px /5 *2);
         }
        .text{
         gap: 10px;

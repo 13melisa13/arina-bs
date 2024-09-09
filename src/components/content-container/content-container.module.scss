@@ -4,6 +4,7 @@
   align-items: center;
   align-self: stretch;
     flex-grow: 2;
+  line-height: 1;
 }
 @media screen and (min-width: 1440px){
   .contentContainer{
@@ -15,8 +16,10 @@
     gap: 20px;
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
   .contentContainer{
-    gap: 10px;
+    flex-direction: column;
+    gap: 30px;
   }
 }
+

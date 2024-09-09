@@ -5,6 +5,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
+    line-height: 1;
 
 }
 @media screen and (max-width: 768px){
@@ -21,8 +23,11 @@
 }
 @media screen and (min-width: 1440px){
     .layout{
-        padding: 40px max(40px, calc((100vw - 1358px) / 2));
+        padding: 50px;
+        //width: calc(100vw - 82px);
+        //padding: 40px max(40px, calc((100vw - 1358px) / 2));
         gap: 50px;
+
     }
 }
 

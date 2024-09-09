@@ -2,7 +2,6 @@ import styles from './layout.module.scss'
 import React from 'react'
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import ContentContainer from "../content-container/ContentContainer";
 import {Outlet} from "react-router-dom";
 
 type LayoutProps = {
@@ -16,8 +15,10 @@ function Layout({ children, header, footer}: LayoutProps) {
 		<>
 		<div className={styles.layout}>
 			{header || <Header />}
-			<Outlet />
-			{children}
+			{/*<div className={styles.main}>*/}
+				<Outlet />
+				{children}
+			{/*</div>*/}
 			{/*{ main || <Outlet />}*/}
 			{footer || <Footer />}
 		</div>
