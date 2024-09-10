@@ -45,11 +45,21 @@ export default function Product({...cardProps}: ProductProps) {
         <h3 className={styles.title}>{title.slice(0,15)}{title.length > 15 && '...'}</h3>
         {!count || count === 0 ?
             <div className={styles.manage}>
+                <UIButton
+
+                    img={'heart'}
+                     paddingTop={0}
+                     paddingAside={0}
+                    backgroundColor={'transparent'}
+
+                     onClick={() => {}}
+
+                    children={""} title={"Отложить"} />
                 <UIButton children={'В корзину'}
                           {...buttonProps}
                           onClick={() =>
                               dispatch(addProduct(new ProductType(title, id, price, imageUrl)))}
-                          imgBefore={'heart'}
+                          // imgBefore={'heart'}
 
                 />
             </div>

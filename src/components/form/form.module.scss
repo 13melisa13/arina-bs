@@ -4,10 +4,10 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    box-sizing: border-box;
-    background-color: var(--main-white);
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    //box-sizing: border-box;
+    //background-color: var(--main-white);
+    //border-radius: 20px;
+    //box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
     .text{
         display: flex;
@@ -17,8 +17,7 @@
 
     }
     @media screen and (min-width: 1440px){
-        width: 1000px;
-        padding: 80px;
+
         gap: 20px;
         .text{
             font: var(--font-simple-xl);
@@ -28,8 +27,8 @@
         }
     }
     @media screen and (max-width: 1440px){
-        width: 800px;
-        padding: 70px;
+        //width: 800px;
+        //padding: 70px;
         gap: 20px;
         .text{
             font: var(--font-simple-l);
@@ -39,8 +38,8 @@
         }
     }
     @media screen and (max-width: 1024px){
-        width: 600px;
-        padding: 50px;
+        //width: 600px;
+        //padding: 50px;
         gap: 20px;
         .text{
             font: var(--font-simple-m);
@@ -50,8 +49,8 @@
         }
     }
     @media screen and (max-width: 768px){
-        width: 400px;
-        padding: 30px;
+        //width: 400px;
+        //padding: 30px;
         gap: 10px;
         .text{
             font: var(--font-simple-s);
@@ -61,8 +60,8 @@
         }
     }
     @media screen and (max-width: 425px){
-        width: 300px;
-        padding: 20px;
+        //width: 300px;
+        //padding: 20px;
         gap: 20px;
         .text{
             font: var(--font-simple-xs);

@@ -147,12 +147,13 @@
     top: 0;
     left: 0;
     box-sizing: border-box;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1em;
+    height: 1em;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    margin-right: .5em;
+
+    //margin-right: .5em;
 }
 .img-cart {
     background-image: url("~/src/assets/images/cart.png");
@@ -161,11 +162,12 @@
     background-image: url("~/src/assets/images/heart.png");
 }
 .img-before::before{
+
   background-image: url("~/src/assets/images/heart.png");
 }
-.img-heart:hover{
-    background-image: url("~/src/assets/images/heart-hover.png");
-}
+//.img-heart:hover{
+//    background-image: url("~/src/assets/images/heart-hover.png");
+//}
 .img-search {
     background-image: url("~/src/assets/images/search-button.svg");
     background-size: 25% 25%;

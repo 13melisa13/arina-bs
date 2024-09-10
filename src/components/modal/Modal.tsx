@@ -24,9 +24,14 @@ export default function Modal({ children }: ModalProps) {
     });
     return createPortal(
         <dialog className={styles.modal} ref={modal} id={"modal"} onClick={() => navigate(-1)}>
+
             <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
                 {children}
+                <div  onClick={() => navigate(-1)}>
+                    <div className={styles.close}></div>
+                </div>
             </div>
+
         </dialog>, document.getElementById("modal_root") as HTMLElement
     );
 

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import styles from './uibutton.module.scss'
 import clsx from "clsx";
+import {useLayoutEffect} from "react";
 
 
 type UIButtonProps = {
@@ -64,6 +65,7 @@ export const UIButton = ({
 		styles[`border-radius-${borderRadius}`],
 			styles[`text-align-${textAlign}`]
 	);
+
 	title = title || (children || '').toString()
 	return to ? (
 		<NavLink
