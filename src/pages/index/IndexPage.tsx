@@ -7,8 +7,7 @@ import adverts from "../../data/adverts";
 import products from "../../data/products";
 import Service from "../../components/cards/service/Service";
 import services from "../../data/services";
-import {Outlet} from "react-router-dom";
-
+// import styles from './index.module.scss'
 
 
 
@@ -44,7 +43,9 @@ export default function IndexPage() {
 
 
 			</Section>
-			<Section title={'Услуги'} tagTitle={'h2'} moreLink={'/services'}>
+			<Section title={'Услуги'} tagTitle={'h2'} moreLink={'/services'}
+					 flexDirection={'column'}
+			>
 				{services.map((service, index) => (
 					<Service title={service.title}
 							 busynessName={service.busynessName}
@@ -55,7 +56,6 @@ export default function IndexPage() {
 					/>
 				))}
 			</Section>
-			{/*<Outlet />*/}
 		</>
 	)
 }

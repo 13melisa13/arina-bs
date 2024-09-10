@@ -31,14 +31,15 @@
   }
   .content {
     grid-area: content;
-    //width: 100%;
     display: flex;
+    transition: all 0.5s ease-in-out;
 
+  }
+  .content.row{
     overflow-y: hidden;
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
-    transition: all 0.5s ease-in-out;
     ::-webkit-scrollbar {
       width: 5px;
       opacity: 0;
@@ -50,13 +51,17 @@
     ::-webkit-scrollbar-track {
       background: transparent;
     }
-
-  }
-  .content:hover{
+  .content.row:hover{
       scrollbar-color: var(--soft-pink, rgba(240, 152, 152, 1)) transparent;
         ::-webkit-scrollbar {
           opacity: 1;
         }
+    }
+
+}
+
+    .content.column{
+        flex-direction: column;
     }
 }
 

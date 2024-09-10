@@ -32,6 +32,16 @@ export default function Product({...cardProps}: ProductProps) {
     }
     return <div
         className={styles.card}>
+        <UIButton
+
+                    img={'heart'}
+                     paddingTop={0}
+                     paddingAside={0}
+                    backgroundColor={'transparent'}
+                    className={styles.favorite}
+                     onClick={() => {}}
+
+                    children={""} title={"Отложить"} />
         <Link to={`/products/${id}`} className={styles.link}>
 
             <img src={img || defaultImageUrl}
@@ -46,16 +56,6 @@ export default function Product({...cardProps}: ProductProps) {
 
         {!count || count === 0 ?
             <div className={styles.manage}>
-                <UIButton
-
-                    img={'heart'}
-                     paddingTop={0}
-                     paddingAside={0}
-                    backgroundColor={'transparent'}
-
-                     onClick={() => {}}
-
-                    children={""} title={"Отложить"} />
 
                 <UIButton children={'В корзину'}
                           {...buttonProps}
@@ -66,16 +66,7 @@ export default function Product({...cardProps}: ProductProps) {
                 />
             </div>
             : <div className={styles.manage}>
-                <UIButton
 
-                    img={'heart'}
-                     paddingTop={0}
-                     paddingAside={0}
-                    backgroundColor={'transparent'}
-
-                     onClick={() => {}}
-
-                    children={""} title={"Отложить"} />
                 <UIButton children={'+'}
 
                           {...buttonProps}

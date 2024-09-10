@@ -11,17 +11,18 @@ type SectionProps = {
     tagTitle: keyof IntrinsicElements;
     afterTitle?: string;
     moreLink?: string;
+    flexDirection?: 'row' | 'column';
 }
-export default function Section({title, children, tagTitle="h2", afterTitle="", moreLink}: SectionProps) {
+export default function Section({title, children, tagTitle="h2", afterTitle="", moreLink, flexDirection="row"}: SectionProps) {
     return (
-        <section className={styles.section}>
+        <section className={clsx(styles.section)}>
             {React.createElement(tagTitle,
                 {className: clsx(styles.title, styles[tagTitle])},
                 title)}
             {afterTitle && <span className={styles.afterTitle}
 
             >{afterTitle}</span>}
-            <div className={styles.content}>
+            <div className={clsx(styles.content, styles[flexDirection])}>
 
                     {children}
 
