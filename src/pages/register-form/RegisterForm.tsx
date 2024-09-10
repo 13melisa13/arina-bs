@@ -7,7 +7,7 @@ import {Input} from "../../components/input/Input";
 import Form from "../../components/form/Form";
 import {TRegisterData} from "../../types/TRegisterData";
 import {register} from "../../services/registerAction";
-import {UIButton} from "../../components/button/UIButton";
+import {UIButton} from "../../components/ui-button/UIButton";
 
 export default function RegisterForm() {
     const inputRef = useRef<HTMLInputElement | null>(null);

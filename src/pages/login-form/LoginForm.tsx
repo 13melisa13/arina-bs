@@ -7,7 +7,7 @@ import {login} from "../../services/authAction";
 import formValidators from "../../validators/validators";
 import {Input} from "../../components/input/Input";
 import Form from "../../components/form/Form";
-import {UIButton} from "../../components/button/UIButton";
+import {UIButton} from "../../components/ui-button/UIButton";
 
 export default function LoginForm() {
     const inputRef = useRef<HTMLInputElement | null>(null);

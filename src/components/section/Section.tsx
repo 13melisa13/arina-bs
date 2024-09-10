@@ -3,7 +3,7 @@ import styles from './section.module.scss';
 import {JSX} from "react/jsx-runtime";
 import IntrinsicElements = JSX.IntrinsicElements;
 import clsx from "clsx";
-import {UIButton} from "../button/UIButton";
+import {UIButton} from "../ui-button/UIButton";
 
 type SectionProps = {
     title: string;

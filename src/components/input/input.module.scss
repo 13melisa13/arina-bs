@@ -1,22 +1,15 @@
 .inputBox{
   display: flex;
-
   flex-direction: column;
   padding: 0 20px;
-
   .label{
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
     align-self: flex-start;
   }
   .input{
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
     padding: 10px;
     border: none;
     color: var(--input-text-color);
     border-radius: 5px;
-
   }
   .input:focus{
     outline: none;
@@ -29,12 +22,96 @@
         border: 2px solid var(--green);
     }
     .error{
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
         color: var(--red);
         align-self: flex-start;
     }
+}
+@media screen and (min-width: 1440px){
+  .inputBox{
+    gap: 10px;
+  }
+  .label{
+    font: var(--link-title-xl);
+  }
+  .error{
+    font: var(--font-simple-xl)
+  }
+  .input{
+    font: var(--font-simple-xl);
+  }
+}
 
+@media screen and (min-width: 1440px){
+  .inputBox{
+    gap: 10px;
+  }
+  .label{
+    font: var(--link-title-xl);
+  }
+  .error{
+    font: var(--font-simple-xl)
+  }
+  .input{
+    font: var(--font-simple-xl);
+  }
+}
 
+@media screen and (max-width: 1440px){
+  .inputBox{
+    gap: 10px;
+  }
+  .label{
+    font: var(--link-title-l);
+  }
+  .error{
+    font: var(--font-simple-l)
+  }
+  .input{
+    font: var(--font-simple-l);
+  }
+}
 
+@media screen and (min-width: 1024px){
+  .inputBox{
+    gap: 10px;
+  }
+  .label{
+    font: var(--link-title-m);
+  }
+  .error{
+    font: var(--font-simple-m)
+  }
+  .input{
+    font: var(--font-simple-m);
+  }
+}
+
+@media screen and (min-width: 768px){
+  .inputBox{
+    gap: 10px;
+  }
+  .label{
+    font: var(--link-title-s);
+  }
+  .error{
+    font: var(--font-simple-s)
+  }
+  .input{
+    font: var(--font-simple-s);
+  }
+}
+
+@media screen and (min-width: 425px){
+  .inputBox{
+    gap: 10px;
+  }
+  .label{
+    font: var(--link-title-xs);
+  }
+  .error{
+    font: var(--font-simple-xs)
+  }
+  .input{
+    font: var(--font-simple-xs);
+  }
 }

@@ -31,7 +31,7 @@
   }
   .content {
     grid-area: content;
-    width: 100%;
+    //width: 100%;
     display: flex;
 
     overflow-y: hidden;
@@ -64,17 +64,17 @@
   .section{
     gap: 14px;
     .title.h1{
-    font: 800 28px/ 1 'Inter', sans-serif;
+      font: var(--section-main-title-xl);
     }
     .title.h2{
-      font: 600 24px/ 1 'Inter', sans-serif;
+      font: var(--section-title-xl);
     }
     .afterTitle{
-      font: 800 28px/ 1 'Inter', sans-serif;
+      font: var(--section-main-title-xl);
     }
     .content{
       gap: 20px;
-      padding: 20px 0;
+      padding: 20px;
     }
 
   }
@@ -86,22 +86,42 @@
     gap: 12px;
 
     .title.h1{
-    font: 800 24px/ 1 'Inter', sans-serif;
+    font: var(--section-main-title-l);
     }
     .afterTitle{
-      font: 800 24px/ 1 'Inter', sans-serif;
+      font: var(--section-main-title-l);
     }
     .title.h2{
-      font: 600 20px/ 1 'Inter', sans-serif;
+      font: var(--section-title-l);
     }
     .content{
       gap: 15px;
-      padding: 15px 0;
+      padding: 15px;
 
     }
 
   }
 
+}
+@media screen and (max-width: 1024px){
+    .section{
+        gap: 10px;
+        .title.h1{
+        font: var(--section-main-title-m);
+        }
+        .afterTitle{
+        font: var(--section-main-title-m);
+        }
+        .title.h2{
+        font: var(--section-title-m);
+        }
+        .content{
+            gap: 10px;
+            padding: 10px;
+
+        }
+
+    }
 }
 @media screen and (max-width: 768px){
   .section{
@@ -110,24 +130,47 @@
     'content content';
     gap: 10px;
     .title.h1{
-    font: 800 16px/ 1 'Inter', sans-serif;
+    font: var(--section-main-title-s);
     }
     .afterTitle{
-      font: 800 16px/ 1 'Inter', sans-serif;
+      font: var(--section-main-title-s);
     }
     .title.h2{
-      font: 600 14px/ 1 'Inter', sans-serif;
+      font: var(--section-title-s);
     }
     .moreLink{
       display: none;
     }
     .content{
       gap: 10px;
-        padding: 10px 0;
+      padding: 10px;
 
 
     }
   }
+}
+  @media screen and (max-width: 425px){
+    .section {
+      gap: 10px;
 
+      .title.h1 {
+        font: var(--section-main-title-xs);
+      }
+
+      .afterTitle {
+        font: var(--section-main-title-xs);
+      }
+
+      .title.h2 {
+        font: var(--section-title-xs);
+      }
+
+      .content {
+        gap: 10px;
+        padding: 10px 0;
+
+      }
+
+    }
 }
 

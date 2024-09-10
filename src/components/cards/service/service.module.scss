@@ -1,4 +1,5 @@
 .card{
+    --button-size: 30px;
     display: flex;
     position: relative;
     justify-content: start;
@@ -10,7 +11,9 @@
     .background{
         border-radius: 20px;
         object-fit: cover;
-    }
+      height: 100%;
+      width: calc(100% / 5 * 2);
+        }
     .text{
         display: flex;
         flex-direction: column;
@@ -25,6 +28,13 @@
   }
   .button{
     position: absolute;
+    top: 5px;
+    right: 5px;
+    width: var(--button-size);
+    height: var(--button-size);
+    //padding-bottom: 100%;
+    //height: var(--button-size);
+    object-fit: contain;
 
   }
   .price{
@@ -35,91 +45,113 @@
   }
 
 }
+
 @media screen and (min-width: 1440px){
     .card {
-        height: 200px;
-        width: 700px;
-        .background{
-            height: 200px;
-            width: calc(700px /5 *2);
-        }
+        height: var(--card-horizontal-height-xl);
+        width: var(--card-horizontal-width-xl);
+        padding-right: var(--button-size);
       .text{
         gap: 10px;
         padding: 10px;
       }
+
     }
     .title{
-        font: 600 20px/ 1 'Inter', sans-serif;
+        font: var(--card-title-xl);
     }
   .busynessName{
-    font: 400 20px/ 1 'Inter', sans-serif;
+    font: var(--card-description-xl);
   }
-  .button{
-    top: 0;
-    right: 0;
-  }
+
   .price{
-    font: 600 24px/ 1 'Inter', sans-serif;
-    margin-right: 10px;
+    font: var(--card-price-xl);
   }
 }
 @media screen and (max-width: 1440px){
      .card {
-        height: 150px;
-        width: 600px;
-        .background{
-            height: 150px;
-            width: calc(600px /5 *2);
-        }
+        height: var(--card-horizontal-height-l);
+        width: var(--card-horizontal-width-l);
+       padding-right: var(--button-size);
+
        .text{
         gap: 10px;
         padding: 10px;
        }
     }
     .title{
-        font: 600 20px/ 1 'Inter', sans-serif;
+        font: var(--card-title-l);
     }
     .busynessName{
-        font: 400 16px/ 1 'Inter', sans-serif;
+        font: var(--card-description-l);
     }
-  .button{
-    top: 0;
-    right: 0;
-  }
     .price{
-        font: 600 20px/ 1 'Inter', sans-serif;
-        margin-right: 10px;
+        font: var(--card-price-l);
     }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
      .card {
-        height: 100px;
-        width: 450px;
-        .background{
-            height: 100px;
-            width: calc(450px /5 *2);
-        }
+        height: var(--card-horizontal-height-m);
+        width: var(--card-horizontal-width-m);
+       padding-right: var(--button-size);
        .text{
         gap: 10px;
         padding: 10px;
        }
-       .button{
-        top: 0;
-        right: 0;
-       }
-
     }
 
     .title{
-        font: 600 16px/ 1 'Inter', sans-serif;
+        font: var(--card-title-m);
     }
     .busynessName{
-        font: 400 12px/ 1 'Inter', sans-serif;
+        font: var(--card-description-m);
 
     }
     .price{
-        font: 600 16px/ 1 'Inter', sans-serif;
-        margin-right: 10px;
+        font: var(--card-price-m);
     }
+}
+@media screen and (max-width: 768px) {
+    .card {
+        height: var(--card-horizontal-height-s);
+        width: var(--card-horizontal-width-s);
+
+       padding-right: var(--button-size);
+       .text{
+        gap: 10px;
+        padding: 10px;
+       }
+    }
+    .title{
+        font: var(--card-title-s);
+    }
+    .busynessName{
+        font: var(--card-description-s);
+    }
+    .price{
+        font: var(--card-price-s);
+    }
+
+}
+@media screen and (max-width: 425px) {
+    .card {
+        height: var(--card-horizontal-height-xs);
+        width: var(--card-horizontal-width-xs);
+       padding-right: var(--button-size);
+       .text{
+        gap: 10px;
+        padding: 10px;
+       }
+    }
+    .title{
+        font: var(--card-title-xs);
+    }
+    .busynessName{
+        font: var(--card-description-xs);
+    }
+    .price{
+        font: var(--card-price-xs);
+    }
+
 }
 

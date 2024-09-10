@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import styles from "./service.module.scss";
-import {UIButton} from "../../button/UIButton";
+import {UIButton} from "../../ui-button/UIButton";
 import img from "@images/service.png"
 type ServiceProps = {
     title: string

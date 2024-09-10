@@ -1,5 +1,5 @@
 import styles from "./logo.module.scss";
-import {UIButton} from "../button/UIButton";
+import {UIButton} from "../ui-button/UIButton";
 
 export default function Logo() {
     return (

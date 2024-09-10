@@ -1,5 +1,4 @@
 .title{
-    font: 800 24px / 1 Inter;
     color: var(--main-black, black);
 }
 .line{
@@ -8,8 +7,7 @@
     align-items: center;
 }
 .text{
-font: 400 16px / 1.5 Inter;
-color: var(--main-black, black);
+  color: var(--main-black, black);
 }
 .image{
     background-color: transparent;
@@ -23,10 +21,10 @@ color: var(--main-black, black);
 @media screen and (min-width: 1440px){
 
         .title{
-            font-size: 32px;
+            font: var(--section-main-title-xl)
         }
       .text{
-        font-size: 18px;
+        font: var(--font-simple-xl);
       }
         .image{
             width: 400px;
@@ -37,10 +35,10 @@ color: var(--main-black, black);
 @media screen and (max-width: 1440px){
 
         .title{
-            font-size: 28px;
+            font: var(--section-main-title-l);
         }
         .text{
-            font-size: 16px;
+            font: var(--font-simple-l);
         }
         .image{
             width: 300px;
@@ -48,19 +46,46 @@ color: var(--main-black, black);
         }
 
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
 
         .line{
             flex-direction: column;
         }
         .title{
-            font-size: 24px;
+            font: var(--section-main-title-m);
         }
         .text{
-            font-size: 14px;
+            font: var(--font-simple-m);
         }
         .image{
             width: 200px;
             height: 200px;
+        }
+}
+@media screen and (max-width: 768px){
+
+        .title{
+            font: var(--section-main-title-s);
+        }
+        .text{
+            font: var(--font-simple-s);
+        }
+        .image{
+            width: 175px;
+            height: 175px;
+        }
+}
+
+@media screen and (max-width: 425px){
+
+        .title{
+            font: var(--section-main-title-xs);
+        }
+        .text{
+            font: var(--font-simple-xs);
+        }
+        .image{
+            width: 150px;
+            height: 150px;
         }
 }

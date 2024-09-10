@@ -1,5 +1,5 @@
 import styles from './footer.module.scss'
-import {UIButton} from "../button/UIButton";
+import {UIButton} from "../ui-button/UIButton";
 import clsx from "clsx";
 
 export default function Footer() {

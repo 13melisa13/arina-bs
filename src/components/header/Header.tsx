@@ -1,7 +1,7 @@
 import styles from './header.module.scss'
 import Logo from "../logo/Logo";
 import React from "react";
-import {UIButton} from "../button/UIButton";
+import {UIButton} from "../ui-button/UIButton";
 import clsx from "clsx";
 import {useLocation} from "react-router-dom";
 
@@ -27,7 +27,7 @@ export default function Header() {
 						type='submit'
 						className={styles.searchButton}
 						children={''}
-						backgroundColor='main-white'
+						backgroundColor='transparent'
 						title={'Поиск'}
 						img='search'
 					/>

@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import styles from "./product.module.scss";
-import {UIButton} from "../../button/UIButton";
+import {UIButton} from "../../ui-button/UIButton";
 import {useDispatch} from "react-redux";
 import img from "@images/product.png"
 import {addProduct, decrementProduct, incrementProduct, Product as ProductType, removeProduct} from "../../../services/productSlice";
@@ -42,7 +42,7 @@ export default function Product({...cardProps}: ProductProps) {
         </Link>
 
         <p className={styles.price}>{price}руб.</p>
-        <h3 className={styles.title}>{title.slice(0,20)}{title.length > 20 && '...'}</h3>
+        <h3 className={styles.title}>{title.slice(0,15)}{title.length > 15 && '...'}</h3>
         {!count || count === 0 ?
             <div className={styles.manage}>
                 <UIButton children={'В корзину'}

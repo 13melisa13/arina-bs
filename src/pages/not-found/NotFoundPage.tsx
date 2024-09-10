@@ -1,5 +1,5 @@
 import React from 'react';
-import {UIButton} from "../../components/button/UIButton";
+import {UIButton} from "../../components/ui-button/UIButton";
 import styles from './notfoundpage.module.scss';
 export default function NotFoundPage() {
     return (

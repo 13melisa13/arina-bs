@@ -1,9 +1,12 @@
 .background-soft-pink {
   background-color: var(--soft-pink, rgba(252, 228, 228, 1));
 }
+
 .background-dark-pink {
   background-color: var(--dark-pink, rgba(240, 152, 152, 1));
+
 }
+
 .background-transparent {
   background-color: transparent;
 }
@@ -19,6 +22,9 @@
 .color-white {
   color: var(--white, #fff);
 }
+//.color-white:hover{
+//    color: var(--main-black, rgba(11, 13, 14, 1));
+//}
 .color-dark-pink {
   color: var(--dark-pink, rgba(240, 152, 152, 1));
 }
@@ -33,12 +39,33 @@
 }
 
 .button {
-    font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
     text-decoration: none;
     cursor: pointer;
     min-width: max-content;
+    @media screen and (min-width: 1440px){
+        font: var(--link-title-xl);
+    }
+    @media screen and (max-width: 1440px){
+        font: var(--link-title-l);
+    }
+    @media screen and (max-width: 1024px){
+        font: var(--link-title-m);
+    }
+    @media screen and (max-width: 768px){
+        font: var(--link-title-s);
+    }
+    @media screen and (max-width: 425px){
+        font: var(--link-title-xs);
+    }
+
+}
+.button.background-dark-pink:hover,
+.button.background-soft-pink:hover,
+.button.background-main-white:hover,
+.button.background-white:hover {
+    box-shadow: inset 4px 4px 4px  rgba(0, 0, 0, 0.25);
 }
 
 .border-radius-15 {
@@ -97,6 +124,7 @@
 .border-dark-pink {
     border: 2px solid var(--dark-pink, rgba(240, 152, 152, 1));
 }
+
 .border-none {
     border: none;
 }
@@ -135,10 +163,13 @@
 .img-before::before{
   background-image: url("~/src/assets/images/heart.png");
 }
+.img-heart:hover{
+    background-image: url("~/src/assets/images/heart-hover.png");
+}
 .img-search {
     background-image: url("~/src/assets/images/search-button.svg");
     background-size: 25% 25%;
-    background-color: var(--main-white);
+    background-color: var(--white);
 }
 
 
