@@ -7,7 +7,7 @@ import {useLayoutEffect} from "react";
 type UIButtonProps = {
 	children: React.ReactNode | string
 	title?: string
-	onClick?: () => void
+	onClick?: any
 	type?: 'submit' | 'reset'
 	disabled?: boolean
 	to?: string | null

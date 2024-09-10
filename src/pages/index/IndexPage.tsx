@@ -7,12 +7,31 @@ import adverts from "../../data/adverts";
 import products from "../../data/products";
 import Service from "../../components/cards/service/Service";
 import services from "../../data/services";
-// import styles from './index.module.scss'
+import React, {useEffect} from "react";
 
 
 
 export default function IndexPage() {
 	const productCart = useSelector(getProducts);
+	const [isMobile, setIsMobile] = React.useState(false);
+
+	useEffect(() => {
+		if (window.innerWidth <= 1024) {
+			setIsMobile(true);
+		}
+		const resize = () => {
+			if (window.innerWidth <= 1024) {
+				setIsMobile(true);
+			} else {
+				setIsMobile(false);
+			}
+		}
+		window.addEventListener('resize', resize);
+		return () => {
+			window.removeEventListener('resize', resize);
+		}
+	}, [window.innerWidth]);
+
 	return (
 		<>
 			<Section title={'Рекомендации'} tagTitle={'h1'} afterTitle={'на районе'} moreLink={'/adverts'}>
@@ -44,7 +63,7 @@ export default function IndexPage() {
 
 			</Section>
 			<Section title={'Услуги'} tagTitle={'h2'} moreLink={'/services'}
-					 flexDirection={'column'}
+					 flexDirection={isMobile ? 'column' : 'row'}
 			>
 				{services.map((service, index) => (
 					<Service title={service.title}

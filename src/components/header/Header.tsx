@@ -8,6 +8,8 @@ import {useLocation} from "react-router-dom";
 export default function Header() {
 	const [isMobile, setIsMobile] = React.useState(false);
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+	const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+
 	const handleSearch = (e: React.FormEvent) => {
 		e.preventDefault()
 	}
@@ -41,16 +43,35 @@ export default function Header() {
 					)
 				}>
 				<Logo/>
-				<form className={styles.searchForm} onSubmit={handleSearch}>
-					<input type='text' placeholder='Search' className={styles.searchInput}/>
+				<form onClick={() => setIsMenuOpen(false)}
+					className={
+					clsx(
+					styles.searchForm,
+						isSearchOpen ? styles.open : styles.close)
+				} onSubmit={handleSearch}>
+					<input
+						type='text' placeholder='Search'
+						className={clsx(styles.searchInput, isSearchOpen ? styles.open : styles.close)}
+						onFocus={() => setIsSearchOpen(true)}/>
 					<UIButton
+						borderRadius={15}
+
 						type='submit'
 						className={styles.searchButton}
 						children={''}
 						backgroundColor='transparent'
 						title={'Поиск'}
 						img='search'
+						onClick={() => {
+							setIsSearchOpen(!isSearchOpen);
+							if (!isSearchOpen) {
+								setTimeout(() => {
+									document.querySelector('input')?.focus();
+								}, 100)}
+						}
+						}
 					/>
+
 				</form>
 				<input type={"checkbox"} id={"menu"}
 					   className={clsx(styles.menu)}
@@ -58,17 +79,34 @@ export default function Header() {
 					   onChange={() => setIsMenuOpen(!isMenuOpen)}
 				/>
 				<label htmlFor={"menu"} className={clsx(styles.menuIconBox, styles.mobile)}>
-					<span className={styles.menuIcon}></span>
+					<span className={clsx(styles.menuIcon, isMenuOpen ? styles.open : styles.close)}></span>
 				</label>
 			</div>
 			<div
 				className={
 					clsx(
+						styles.IKGroup,
 						styles.section,
-						isMenuOpen && styles.open,
+						isMenuOpen ? styles.open : styles.close,
 						isMobile && styles.mobile
 					)
 				}>
+				{/*<div onClick={() => setIsMenuOpen(false)} >*/}
+				{/*	<span className={styles.close}></span>*/}
+				{/*</div>*/}
+
+
+				{/*{isMobile && <UIButton*/}
+				{/*	to='/'*/}
+				{/*	children='Главная'*/}
+				{/*	backgroundColor='transparent'*/}
+				{/*	color='main-black'*/}
+				{/*	paddingAside={0}*/}
+				{/*	paddingTop={0}*/}
+				{/*	state={{ from: location }}*/}
+				{/*/>*/}
+				{/*}*/}
+
 				<UIButton
 					to='/login'
 					children='Услуги'
